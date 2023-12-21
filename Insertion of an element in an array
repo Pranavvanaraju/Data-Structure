@@ -1,0 +1,21 @@
+#include<stdio.h>
+int main()
+{
+    int a[10],i,n,b,c;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&a[i]);
+    }
+    scanf("%d",&b);
+    scanf("%d",&c);
+    for(i=n-1;i>=b;i--)
+    {
+        a[i+1]=a[i];
+    }
+    a[b]=c;
+    for(i=0;i<n;i++)
+    {
+        printf("%d",a[i]);
+    }
+}
