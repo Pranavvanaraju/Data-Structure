@@ -1,0 +1,66 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define size 5
+int top=-1,stk[size];
+void is_empty()
+{
+    if(top==-1)
+    printf("Stack is empty");
+}
+void is_full()
+{
+    if(top==size-1)
+    printf("Stack is full");
+}
+void push(int x)
+{
+    is_empty();
+    is_full();
+    top=top+1;
+    stk[top]=x;
+}
+void pop()
+{
+    is_empty();
+  int  x=stk[top];
+    top=top-1;
+    printf("The deleted element is:%d",x);
+}
+void peak()
+{
+    is_empty();
+    printf("The top of the stack=%d",stk[top]);
+}
+void display()
+{
+    is_empty();
+    for(int i=top;i>=0;i--)
+    printf("%d\n",stk[i]);
+}
+
+int main()
+{
+    int cho,ele;
+    do{
+        printf("***MENU DRIVEN***\n");
+        printf("\n1.push\n2.pop\n3.peak\n4.display\n5.exit");
+        printf("\nEnter your choice");
+        scanf("%d",&cho);
+        switch(cho)
+        {
+            case 1:printf("Enter the element");
+            scanf("%d",&ele);
+            push(ele);
+            break;
+            case 2:pop();
+            break;
+            case 3:peak();
+            break;
+            case 4:display();
+            break;
+            case 5:exit(0);
+            default:printf("\nEnter a number bet 1 to 5");
+        }
+    }while(cho>=1 && cho<=5);
+    return 0;
+}
